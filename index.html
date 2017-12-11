@@ -8,6 +8,21 @@
   <script src="js/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
-<h1>jQuery Mobile Boiler</h1>
+<div data-role="page" id="home">
+  <div data-role="header" data-theme="b">
+    <h1>Movie Listing</h1>
+  </div>
+  <div data-role="main">
+    <form id="searchForm">
+      <div class="ui-field-contain">
+        <input type="text" name="searchText" id="searchText" placeholder="Search for a Movie...">
+      </div>
+    </form>
+    <ul id="movies" data-role="listview"></ul>
+  </div>
+  <div data-role="footer" style="text-align:center" data-theme="b">
+    <p>MovieDBase &copy; 2017</p>
+  </div>
+</div>
 </body>
 </html>
