@@ -6,6 +6,12 @@ $(document).ready(function() {
   });
 });
 
+//single movie selected. get the movie details
+function movieClicked(id) {
+  sessionStorage.setItem('movieId', id);
+  $.mobile.changePage('movie.html');
+}
+
 //get movies omdb API
 function getMovies(searchText) {
   $.ajax({
@@ -17,7 +23,7 @@ function getMovies(searchText) {
     $.each(movies, function (index, movie) {
       output += `
         <li>
-          <a href="#">
+          <a onclick="movieClicked('${movie.imdbID}')" href="#">
             <img src="${movie.Poster}">
             <h2>${movie.Title}</h2>
             <p>Release YearL ${movie.Year}</p>
